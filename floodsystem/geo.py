@@ -61,13 +61,13 @@ geographical data.
 
 
 
+
 def stations_with_river(stations):
     stationRivers = set()
     for i in range(len(stations)):
         if stations[i].river != None:
           stationRivers.add(stations[i].river)
     return stationRivers
-    
 def stations_by_river(stations):
     Riverstations = {}
     for i in range(len(stations)): # go through each station and assign variable to river name and station name
