@@ -68,7 +68,7 @@ def stations_by_river(stations):
 def rivers_by_station_number(stations, N):
     Top_list=[]
     River_dict = stations_by_river(stations)
-
+    
     station_number = []
     river_key = list(River_dict.keys())
     for river in River_dict:
@@ -76,8 +76,11 @@ def rivers_by_station_number(stations, N):
     
     bob = list(zip(river_key,station_number))
     bob.sort(key=lambda x:x[1])    
-    Top_list = bob[len(bob)-N:len(bob)]
+    while bob[len(bob)-N][1] == bob[len(bob)-(N+1)][1]:
+        N = N+1
     
+    Top_list = bob[len(bob)-N:len(bob)]
+
     return Top_list
 
         
